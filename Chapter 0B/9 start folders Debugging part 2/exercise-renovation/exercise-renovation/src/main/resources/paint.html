@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:item="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Paint calculator: result</title>
+</head>
+<body>
+
+<p th:text="'Hello ' + ${name}"></p>
+<p th:text="${'You will need ' + renovationproject.getAmountOfPaintInLitres() + ' litres of paint.'}"></p>
+<p th:if="${renovationproject.isCeilingIncluded()}">Have you thought about using a special ceiling paint?</p>
+<p><a href="/paint.html">Back</a></p>
+</body>
+</html>

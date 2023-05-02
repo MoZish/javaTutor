@@ -1,0 +1,551 @@
+{
+	"info": {
+		"_postman_id": "9987608d-4fb3-4051-a88c-534aab1580de",
+		"name": "Test training Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20038127"
+	},
+	"item": [
+		{
+			"name": "test al trainings",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var _ = require('lodash'),\r",
+							"responseArray = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.test('Trainings are in sorted order', () => {\r",
+							"   // Using the orderBy function from lodash \r",
+							"   // Read docs: https://lodash.com/docs/4.17.10#orderBy\r",
+							"    var expectedSortedOrder = _.orderBy(responseArray, ['theme'],['asc']);\r",
+							"\r",
+							"    pm.expect(responseArray).to.eql(expectedSortedOrder);    \r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Number of records in resultset is ok\", function () {\r",
+							"    pm.expect(Object.keys(pm.response.json()).length).to.eql(50);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/training",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"training"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test 1 training",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json(); ",
+							"pm.test(\"Verify number\", function () { ",
+							"        pm.expect(jsonData.id).is.to.equal(3010); ",
+							"    });",
+							"pm.test(\"Verify code\", function () { ",
+							"        pm.expect(jsonData.code).is.to.equal(\"BIU10\"); ",
+							"    });",
+							"pm.test(\"Verify last_name\", function () { ",
+							"        pm.expect(jsonData.title).is.to.equal(\"MS Access Advanced\"); ",
+							"    });",
+							"pm.test(\"Verify theme\", function () { ",
+							"        pm.expect(jsonData.theme).is.to.equal(\"Construction\"); ",
+							"    });   ",
+							"pm.test(\"Verify duration\", function () { ",
+							"        pm.expect(jsonData.duration).is.to.equal(2); ",
+							"    });  ",
+							"pm.test(\"Verify max\", function () { ",
+							"        pm.expect(jsonData.max).is.to.equal(20); ",
+							"    });  ",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/training/3010",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"training",
+						"3010"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test trainings by part of title",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var expectedJsonBody =\r",
+							"    [\r",
+							"    {\r",
+							"        \"id\": 1,\r",
+							"        \"code\": \"INT61\",\r",
+							"        \"title\": \"Java Advanced JPA Introduction\",\r",
+							"        \"theme\": \"ICT-training\",\r",
+							"        \"duration\": 3,\r",
+							"        \"max\": 12\r",
+							"    },\r",
+							"    {\r",
+							"        \"id\": 3005,\r",
+							"        \"code\": \"INT65\",\r",
+							"        \"title\": \"Java Introduction\",\r",
+							"        \"theme\": \"ICT-training\",\r",
+							"        \"duration\": 3,\r",
+							"        \"max\": 12\r",
+							"    },\r",
+							"    {\r",
+							"        \"id\": 3006,\r",
+							"        \"code\": \"INT66\",\r",
+							"        \"title\": \"Java Advanced\",\r",
+							"        \"theme\": \"ICT-training\",\r",
+							"        \"duration\": 3,\r",
+							"        \"max\": 12\r",
+							"    },\r",
+							"    {\r",
+							"        \"id\": 3007,\r",
+							"        \"code\": \"INT91\",\r",
+							"        \"title\": \"Java and Hibernate\",\r",
+							"        \"theme\": \"ICT-training\",\r",
+							"        \"duration\": 4,\r",
+							"        \"max\": 12\r",
+							"    },\r",
+							"    {\r",
+							"        \"id\": 3008,\r",
+							"        \"code\": \"INT92\",\r",
+							"        \"title\": \"Java Enterprise Edition and Struts\",\r",
+							"        \"theme\": \"ICT-training\",\r",
+							"        \"duration\": 2,\r",
+							"        \"max\": 12\r",
+							"    },\r",
+							"    {\r",
+							"        \"id\": 3049,\r",
+							"        \"code\": \"INT61\",\r",
+							"        \"title\": \"Java Advanced JPA Introduction\",\r",
+							"        \"theme\": \"ICT-training\",\r",
+							"        \"duration\": 3,\r",
+							"        \"max\": 12\r",
+							"    }\r",
+							"]\r",
+							"\r",
+							"responseArray = JSON.parse(responseBody);\r",
+							"pm.test('Correct resultset', () => {\r",
+							"    pm.expect(responseArray).to.eql(expectedJsonBody);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Java",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/training/title",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"training",
+						"title"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test create training",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json(); ",
+							"pm.test(\"Verify code\", function () { ",
+							"        pm.expect(jsonData.code).is.to.equal(\"test\"); ",
+							"    });",
+							"pm.test(\"Verify name\", function () { ",
+							"        pm.expect(jsonData.title).is.to.equal(\"this is a test\"); ",
+							"    });",
+							"pm.test(\"Verify theme\", function () { ",
+							"        pm.expect(jsonData.theme).is.to.equal(\"aaatest\"); ",
+							"    });   ",
+							"pm.test(\"Verify duration\", function () { ",
+							"        pm.expect(jsonData.duration).is.to.equal(3); ",
+							"    });  ",
+							"pm.test(\"Verify max\", function () { ",
+							"        pm.expect(jsonData.max).is.to.equal(30); ",
+							"    });  ",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"number\": 3050,\"code\": \"test\",\"title\": \"this is a test\",\"theme\": \"aaatest\",\"duration\": 3,\"max\": 30}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/training",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"training"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test delete training 3009",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"DELETE-request is successful\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"50\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/training/3009",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"training",
+						"3009"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test training 3009 not found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function(){",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/training/3009",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"training",
+						"3009"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test edit training",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json(); ",
+							"pm.test(\"Verify id\", function () { ",
+							"        pm.expect(jsonData.id).is.to.equal(3010); ",
+							"    });",
+							"pm.test(\"Verify code\", function () { ",
+							"        pm.expect(jsonData.code).is.to.equal(\"BIU10\"); ",
+							"    });",
+							"pm.test(\"Verify title\", function () { ",
+							"        pm.expect(jsonData.title).is.to.equal(\"MS Access Advanced\"); ",
+							"    });",
+							"pm.test(\"Verify theme\", function () { ",
+							"        pm.expect(jsonData.theme).is.to.equal(\"EDITED\"); ",
+							"    });   ",
+							"pm.test(\"Verify duration\", function () { ",
+							"        pm.expect(jsonData.duration).is.to.equal(2); ",
+							"    });  ",
+							"pm.test(\"Verify max\", function () { ",
+							"        pm.expect(jsonData.max).is.to.equal(20); ",
+							"    });  ",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3010,\r\n    \"code\": \"BIU10\",\r\n    \"title\": \"MS Access Advanced\",\r\n    \"theme\": \"EDITED\",\r\n    \"duration\": 2,\r\n    \"max\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/training/3010",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"training",
+						"3010"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test edit training that doesn't exist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3010,\r\n    \"code\": \"BIU10\",\r\n    \"title\": \"MS Access Advanced\",\r\n    \"theme\": \"EDITED\",\r\n    \"duration\": 2,\r\n    \"max\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/training/301000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"training",
+						"301000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test training 3010 edited",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json(); ",
+							"pm.test(\"Verify id\", function () { ",
+							"        pm.expect(jsonData.id).is.to.equal(3010); ",
+							"    });",
+							"pm.test(\"Verify code\", function () { ",
+							"        pm.expect(jsonData.code).is.to.equal(\"BIU10\"); ",
+							"    });",
+							"pm.test(\"Verify name\", function () { ",
+							"        pm.expect(jsonData.title).is.to.equal(\"MS Access Advanced\"); ",
+							"    });",
+							"pm.test(\"Verify theme\", function () { ",
+							"        pm.expect(jsonData.theme).is.to.equal(\"EDITED\"); ",
+							"    });   ",
+							"pm.test(\"Verify duration\", function () { ",
+							"        pm.expect(jsonData.duration).is.to.equal(2); ",
+							"    });  ",
+							"pm.test(\"Verify max\", function () { ",
+							"        pm.expect(jsonData.max).is.to.equal(20); ",
+							"    });  ",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/training/3010",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"training",
+						"3010"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test delete training 300 that doesn't exist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"DELETE-request is successful\", function(){",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"50\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/training/300",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"training",
+						"300"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

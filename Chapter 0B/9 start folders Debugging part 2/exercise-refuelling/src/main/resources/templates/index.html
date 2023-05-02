@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Refuel your car</title>
+</head>
+<body>
+<img th:src="@{img/refuelling.jpg}" alt="tanken" />
+<form th:href="@{/calculate-refuelling}" method="post" >
+    <p><label for="previous">Previous mileage:</label>
+        <input type="text" id="previous" name="previous" size="10" /></p>
+    <p><label for="current">Current mileage:</label>
+        <input type="text" id="current" name="current" size="10" /></p>
+    <p><label for="litre">How many litres did you use up:</label>
+        <input type="text" id="litre" name="litre" size="10" /></p>
+    <p><input type="button" name="calculate" value="Calculate consumption" /></p>
+</form>
+</body>
+</html>

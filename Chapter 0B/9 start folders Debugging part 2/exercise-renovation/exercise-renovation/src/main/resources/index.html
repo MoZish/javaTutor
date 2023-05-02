@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Paint calculator</title>
+</head>
+<body>
+<h3>Calculate the amount of paint you need!</h3>
+<form th:href="@{/calculatepaint}">
+    <p><label for="name">Enter your name:</label> <input type="text" id="name" name="name"/></p>
+    <p>Fill in the dimensions of your room:</p>
+    <p><label for="length">L (in metres)</label> <input type="text" id="length" name="length"/></p>
+    <p><label for="witdh">W (in metres) </label> <input type="text" id="witdh" name="witdh"/></p>
+    <p><label for="height">H (in metres)</label> <input type="text" id="height" name="height"/></p>
+    <p>Would you also like to paint the ceiling?<input type="checkbox" id="ceiling" value="yes"/></p>
+    <div>
+        How many layers of paint do you want to put on?
+        <input type="radio" name="numberOfLayers1" value="1" id="choice1"/><label for="choice1">1</label>
+        <input type="radio" name="numberOfLayers2" value="2" id="choice2"/><label for="choice2">2</label>
+        <input type="radio" name="numberOfLayers3" value="3" id="choice3"/><label for="choice3">3</label>
+    </div>
+    </form>
+    <p><input type="submit" value="Calculate"/></p>
+</body>
+</html>
