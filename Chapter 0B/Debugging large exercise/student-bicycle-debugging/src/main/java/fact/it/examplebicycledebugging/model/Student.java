@@ -94,7 +94,7 @@ public class Student {
     }
 
     public String getInitials() {
-        if firstname != null ||surname != null {  // dubbele haakjes verwijderen && vervangen door ||
+        if (firstname != null ||surname != null) {  // dubbele haakjes verwijderen && vervangen door ||
             return firstname.charAt(0) + surname.substring(0, 2);
         } else {
             return null;

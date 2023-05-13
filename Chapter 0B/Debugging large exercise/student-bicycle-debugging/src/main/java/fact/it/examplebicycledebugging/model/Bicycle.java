@@ -49,7 +49,7 @@ public class Bicycle {
     }
 
     public double getPricePerYear() {
-        double pricePerYear = rentalPrice * 12
+        double pricePerYear = rentalPrice * 12;
         if (year > 2014) {
             pricePerYear *= 0.95;
         }
@@ -78,7 +78,7 @@ public class Bicycle {
         } else if (result > 9) {
             result = 9;
         }
-        return result;
+        return (int) result;
 
     }
 
@@ -114,5 +114,9 @@ public class Bicycle {
         }
         return result;
 
+    }
+
+    public double getRentalPrice() {
+        return rentalPrice;
     }
 }

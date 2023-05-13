@@ -1,6 +1,7 @@
 package fact.it.examplebicycledebugging;
 
 
+import fact.it.examplebicycledebugging.model.Bicycle;
 import fact.it.examplebicycledebugging.model.Student;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +20,7 @@ public class ExampleBicycleDebuggingApplication {
 
         // BICYCLE -----
 
-        Bicycle myBicycle = new Bicycle;
+        Bicycle myBicycle = new Bicycle();
         myBicycle.setType("Men's bicycle large");
         myBicycle.setYear(2016);
         myBicycle.setRentalPrice(4.5);
@@ -38,7 +39,7 @@ public class ExampleBicycleDebuggingApplication {
         // STUDENT -----
 
         Student myStudent = new Student("r01234567", "Piet", "Plessers");
-        myStudent.setForeigner(True);
+        myStudent.setForeigner(true);
         myStudent.setWeight(75);
         LocalDate hisBirthday = LocalDate.of(1980,01,01);
         myStudent.setBirthDay(hisBirthday);
@@ -48,7 +49,7 @@ public class ExampleBicycleDebuggingApplication {
         System.out.println("-- NEW STUDENT");
         System.out.println("You created a Student-object with the following values:");
         System.out.println("Full name: " + myStudent.getFullName());
-        System.out.println("Email: " + myStudent.getEmailAddres());
+        System.out.println("Email: " + myStudent.getEmailAddress());
 
         System.out.println("Weight: " + myStudent.getWeight() + "kg");
         System.out.println("Birthday: " + myStudent.getBirthday());
