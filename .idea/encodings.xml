@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Chapter 0A/example-mvc-2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0A/example-mvc-2/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/exercise-course/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/exercise-course/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/exercise-patient/exercise-patient/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/exercise-patient/exercise-patient/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/exercise-refuelling/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/exercise-refuelling/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/exercise-renovation/exercise-renovation/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/primedebug/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/primedebug/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/Debugging large exercise/student-bicycle-debugging/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/Debugging large exercise/student-bicycle-debugging/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/Debugging small exercises/exercise-Circle/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/Debugging small exercises/exercise-date-analyzer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/Debugging small exercises/exercise-random-generator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 0B/Debugging small exercises/exercise-text-analyzer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 1/demoLambdaStream/demoLambdaStream/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 2/demoRest/demoRest/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 3/exampleProject-jpa/exampleProject-jpa/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 3/startproject/startproject/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 4/examples_inheritance/inheritanceJoined/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 4/examples_inheritance/inheritanceSingletable/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 4/examples_inheritance/inheritanceTableperclass/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 4/startproject/startproject/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 5/exampleAssociations/exampleAssociations/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 6/exampleProject-jpa-exceptions/exampleProject-jpa-exceptions/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Chapter 7/surname-firstname-studentnbr-restaurant2023/restaurant-app-start/src/main/java" charset="UTF-8" />
+  </component>
+</project>

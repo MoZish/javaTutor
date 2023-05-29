@@ -1,17 +1,13 @@
-package com.example.examplemvc2.controller;
+package com.example.renovation.controller;
 
-import com.example.examplemvc2.model.RenovationProject;
+import com.example.renovation.model.RenovationProject;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-
 @Controller
 public class MainController {
-
     @RequestMapping("/calculate")
     public String calculatePaint(HttpServletRequest request, Model model) {
 

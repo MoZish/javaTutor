@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="startproject (1)" />
+        <module name="startproject" />
+        <module name="exercise-course" />
+        <module name="restaurant-app-start" />
+        <module name="example-bicycle-debugging" />
+        <module name="exampleProject-jpa" />
+        <module name="exampleProject-jpa-exceptions" />
+        <module name="exampleAssociations" />
+        <module name="inheritanceTableperclass" />
+        <module name="exercise-text-analyzer" />
+        <module name="primedebug" />
+        <module name="inheritanceSingletable" />
+        <module name="exercise-renovation" />
+        <module name="example-mvc-2" />
+        <module name="exercise-patient" />
+        <module name="demoLambdaStream" />
+        <module name="demoRest" />
+        <module name="exercise-date-analyzer" />
+        <module name="exercise-refuelling" />
+        <module name="exercise-circle" />
+        <module name="inheritanceJoined" />
+        <module name="exercise-random-generator" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demoLambdaStream" target="17" />
+      <module name="demoRest" target="17" />
+      <module name="example-bicycle-debugging" target="17" />
+      <module name="example-mvc-2" target="17" />
+      <module name="exampleAssociations" target="17" />
+      <module name="exampleProject-jpa" target="17" />
+      <module name="exampleProject-jpa-exceptions" target="17" />
+      <module name="exercise-circle" target="11" />
+      <module name="exercise-course" target="17" />
+      <module name="exercise-date-analyzer" target="11" />
+      <module name="exercise-patient" target="17" />
+      <module name="exercise-random-generator" target="11" />
+      <module name="exercise-refuelling" target="17" />
+      <module name="exercise-renovation" target="17" />
+      <module name="exercise-text-analyzer" target="11" />
+      <module name="inheritanceJoined" target="17" />
+      <module name="inheritanceSingletable" target="17" />
+      <module name="inheritanceTableperclass" target="17" />
+      <module name="primedebug" target="17" />
+      <module name="restaurant-app-start" target="17" />
+      <module name="startproject" target="17" />
+      <module name="startproject (1)" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demoLambdaStream" options="-parameters" />
+      <module name="demoRest" options="-parameters" />
+      <module name="example-bicycle-debugging" options="-parameters" />
+      <module name="example-mvc-2" options="-parameters" />
+      <module name="exampleAssociations" options="-parameters" />
+      <module name="exampleProject-jpa" options="-parameters" />
+      <module name="exampleProject-jpa-exceptions" options="-parameters" />
+      <module name="exercise-circle" options="-parameters" />
+      <module name="exercise-course" options="-parameters" />
+      <module name="exercise-date-analyzer" options="-parameters" />
+      <module name="exercise-patient" options="-parameters" />
+      <module name="exercise-random-generator" options="-parameters" />
+      <module name="exercise-refuelling" options="-parameters" />
+      <module name="exercise-renovation" options="-parameters" />
+      <module name="exercise-text-analyzer" options="-parameters" />
+      <module name="inheritanceJoined" options="-parameters" />
+      <module name="inheritanceSingletable" options="-parameters" />
+      <module name="inheritanceTableperclass" options="-parameters" />
+      <module name="primedebug" options="-parameters" />
+      <module name="restaurant-app-start" options="-parameters" />
+      <module name="startproject" options="-parameters" />
+      <module name="startproject (1)" options="-parameters" />
+    </option>
+  </component>
+</project>

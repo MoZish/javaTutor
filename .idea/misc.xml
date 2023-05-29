@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Chapter 1/demoLambdaStream/demoLambdaStream/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 2/demoRest/demoRest/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 3/startproject/startproject/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 3/exampleProject-jpa/exampleProject-jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 4/startproject/startproject/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 4/examples_inheritance/inheritanceJoined/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 4/examples_inheritance/inheritanceSingletable/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 4/examples_inheritance/inheritanceTableperclass/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 5/exampleAssociations/exampleAssociations/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 6/exampleProject-jpa-exceptions/exampleProject-jpa-exceptions/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 7/surname-firstname-studentnbr-restaurant2023/restaurant-app-start/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 0A/example-mvc-2/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 0B/Debugging large exercise/student-bicycle-debugging/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 0B/Debugging small exercises/exercise-Circle/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 0B/Debugging small exercises/exercise-date-analyzer/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 0B/Debugging small exercises/exercise-text-analyzer/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 0B/Debugging small exercises/exercise-random-generator/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/primedebug/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/exercise-course/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/exercise-patient/exercise-patient/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/exercise-refuelling/pom.xml" />
+        <option value="$PROJECT_DIR$/Chapter 0B/9 start folders Debugging part 2/exercise-renovation/exercise-renovation/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK" />
+</project>

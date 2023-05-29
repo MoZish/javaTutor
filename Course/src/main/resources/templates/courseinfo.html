@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Course</h3>
+<p th:text = "'Name: ' + ${courseName}"></p>
+<p th:text = "'Location: ' + ${location}"></p>
+<span th:if = "${weekly == true}"><p th:text="'This is a weekly course, starting on '+ ${startDate}+ ' running for '+
+${nmOfDays}+ ' weeks.'"></p></span>
+<span th:unless = "${weekly == false}"><p th:text="'This course starts on '+ ${startDate}+ ' and runs for '+${nmOfDays}+' days.'"></p></span>
+<a href="/">Back</a>
+</body>
+</html>
