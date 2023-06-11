@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="container" style="background-color: #ffffff;color: #2a2a2a;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffa663;">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">Michael Camerlynck</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/manage_staff">Manage Staff</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/manage_orders">Manage Orders</a>
+                </li>
+            </ul>
+            <a class="btn btn-info" href="/dummy_data" role="button">Create Dummy Data</a>
+        </div>
+    </div>
+</nav>
+
+<h1>Search</h1>
+
+<form action="/process_search">
+    <div class="row">
+        <div class="col-4">
+            <label for="table" class="form-label">Table: </label>
+            <select class="form-select" id="table" name="table">
+                <option th:value="all">All</option>
+                <option th:each="table : ${tables}" th:value="${table.getId()}" th:text="${table.getCode()}"></option>
+            </select>
+        </div>
+        
+        <div class="col-4">
+            <div>
+                <label for="date" class="form-label">Date: </label>
+                <input type="date" class="form-control" id="date" name="date">
+            </div>
+            <div class="row">
+                <small class="col-4">
+                    <input class="form-check-input" type="radio" name="dateParam" id="after" value="after" checked>
+                    <label class="form-check-label" for="after">
+                        After Date
+                    </label>
+                </small>
+                <small class="col-4">
+                    <input class="form-check-input" type="radio" name="dateParam" id="before" value="before">
+                    <label class="form-check-label" for="before">
+                        Before Date
+                    </label>
+                </small>
+                <small class="col-4">
+                    
+                    <input class="form-check-input" type="radio" name="dateParam" id="on" value="on">
+                    <label class="form-check-label" for="on">
+                        On Date
+                    </label>
+                </small>
+            </div>
+        </div>
+        
+        <div class="col-4">
+            <div>
+                <label for="total" class="form-label">Total: </label>
+                <input type="number" class="form-control" id="total" name="total">
+            </div>
+            <div class="row">
+                <small class="col-4">
+                    <input class="form-check-input" type="radio" name="totalParam" id="less" checked>
+                    <label class="form-check-label" for="less">
+                        less then
+                    </label>
+                </small>
+                <small class="col-4">
+                    <input class="form-check-input" type="radio" name="totalParam" id="more">
+                    <label class="form-check-label" for="more">
+                        more then
+                    </label>
+                </small>
+                <small class="col-4">
+                    <input class="form-check-input" type="radio" name="totalParam" id="exact">
+                    <label class="form-check-label" for="exact">
+                        exact
+                    </label>
+                </small>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary float-end mt-3">Search</button>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

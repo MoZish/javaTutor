@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Contract</title>
+</head>
+<body>
+
+<h1 th:text="${'Create Rental Contract for Property ' + property.toString}"></h1>
+
+<form th:action="@{/process_contract}">
+    <input type="hidden" id="propertyId" name="propertyId" th:value="${property.getId()}">
+    <div>
+        <label for="tenant" class="form-label">Tenant</label>
+        <select id="tenant" name="tenant" class="form-select">
+            <option value="-1">choose tenant here</option>
+            <option th:each="tenant : ${allTenants}" th:text="${tenant.getName()}" th:value="${tenant.getId()}"></option>
+        </select>
+    </div>
+    
+    <div>
+        <label for="price" class="form-label">Rental Price: </label>
+        <input type="number" name="price" class="form-control" id="price">
+    </div>
+    <button type="submit" class="btn btn-primary">add contract</button>
+</form>
+
+</body>
+</html>

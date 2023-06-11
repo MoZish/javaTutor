@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="container" style="background-color: #ffffff;color: #2a2a2a;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffa663;">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">Michael Camerlynck</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/manage_staff">Manage Staff</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/manage_orders">Manage Orders</a>
+                </li>
+            </ul>
+            <a class="btn btn-info" href="/dummy_data" role="button">Create Dummy Data</a>
+        </div>
+    </div>
+</nav>
+
+<div class="row my-3">
+    <h1 class="col-4">Manage Orders</h1>
+    <div class="col-2">
+        <a class="btn btn-info btn-lg" href="/search" role="button">Search Orders</a>
+    </div>
+    <div class="col-2">
+        <a class="btn btn-success btn-lg" href="/add_order" role="button">Add Order</a>
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div th:each="order : ${allOrders}"  class="col">
+        <div class="card  h-100">
+            <div th:text="'Order #' + ${order.getId()}" th:classappend="${order.isPayed() ? 'bg-success' : 'bg-warning'}"
+                 class="card-header">
+                <span class="badge rounded-pill bg-info" th:text="${order.getDate()}"></span>
+            </div>
+            <a th:href="@{/details(orderId=${order.getId()})}" style="text-decoration: none;" class="text-black">
+                <div class="card-body">
+                    <h5 th:text="'Table: ' + ${order.getTable().getCode()}" class="card-title"></h5>
+                    <p th:text="'Waiter: '+ ${order.getWaiter().getName()}" class="card-text m-0"></p>
+                    <p th:text="'Status: ' + ${order.isPayed() ? 'Paid' : 'Not Paid'}" class="card-text m-0"></p>
+                    <p th:text="'Total  : ' + ${order.getTotal()}" class="card-text m-0"></p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
+

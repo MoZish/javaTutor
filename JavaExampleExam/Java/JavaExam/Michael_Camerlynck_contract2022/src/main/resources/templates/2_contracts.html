@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contrats</title>
+</head>
+<body>
+    <ol>
+        <li th:each="contract : ${contracts}">
+            <p style="margin: 0" th:text="${'Property: ' + contract.getProperty().getCode()}"></p>
+            <p style="margin: 0" th:text="${'Tenant: ' + contract.getTenant().getName()}"></p>
+            <p style="margin: 0" th:text="${'Rental Price: ' + contract.getRentalPrice()}"></p>
+            <p style="margin: 0" th:if="${contract.isActive()}">Active</p>
+            <p style="margin: 0" th:unless="${contract.isActive()}">Not Active</p>
+        </li>
+    </ol>
+
+    <a href="/">Home page</a>
+</body>
+</html>

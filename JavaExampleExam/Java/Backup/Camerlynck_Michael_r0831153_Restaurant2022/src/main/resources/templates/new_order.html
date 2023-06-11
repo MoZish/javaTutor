@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="container" style="background-color: #ffffff;color: #2a2a2a;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffa663;">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">Michael Camerlynck</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/manage_staff">Manage Staff</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/manage_orders">Manage Orders</a>
+                </li>
+            </ul>
+            <a class="btn btn-info" href="/dummy_data" role="button">Create Dummy Data</a>
+        </div>
+    </div>
+</nav>
+
+<h1 class="my-3">Create new order</h1>
+
+<form action="/process_new_order" class="row">
+    <div class="col-6">
+        <label for="table">Table:</label>
+        <select class="form-select" id="table" name="table">
+            <option th:each="table : ${tables}" th:text="${table.getCode()}" th:value="${table.getId()}"></option>
+        </select>
+    </div>
+    <div class="col-6">
+        <label for="waiter">Waiter:</label>
+        <select class="form-select" id="waiter" name="waiter">
+            <option th:each="waiter : ${waiters}" th:text="${waiter.getName()}" th:value="${waiter.getId()}"></option>
+        </select>
+        <button type="submit" class="btn btn-primary">Add Order</button>
+    </div>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

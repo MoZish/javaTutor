@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>All Property</h1>
+    <ul>
+        <li th:each="property : ${allProperty}">
+            <p style="display: inline" th:text="${property.toString()}"></p>
+            <p style="display: inline">(<a th:href="@{/add_contract(propertyId=${property.getId()})}">add contract</a>)</p>
+        </li>
+    </ul>
+</body>
+</html>

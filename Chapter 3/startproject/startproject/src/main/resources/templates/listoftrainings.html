@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>List of training</h1>
+
+<a href="/add">new</a>
+
+<table>
+  <tr>
+    <td>Code</td>
+    <td>Title</td>
+    <td>Theme</td>
+    <td>Delete</td>
+    <td>Edit</td>
+  </tr>
+  <tr th:each="training: ${traininglist}">
+    <td th:text="${training.getCode()}"/>
+    <td th:text="${training.getTitle()()}"/>
+    <td th:text="${training.getTheme()()}"/>
+    <td><a th:href="@{/deletetraining(training=${training.getId()})}">Delete</a></td>
+    <td><a th:href="@{/edit(training=${training.getId()})}">Edit</a></td>
+
+  </tr>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/filterstudents">
+    <label for="lastname">enter last name</label>
+    <input type="text" name="lastname" id="lastname">
+    <label for="firstname">enter first name</label>
+    <input type="text" name="firstname" id="firstname">
+    <label for="age">older than:</label>
+    <input type="text" name="age" id="age">
+    <label for="coursenumber">courses more than:</label>
+    <input type="text" name="coursenumber" id="coursenumber">
+    <label for="course">choose course:</label>
+    <select name="course" id="course">
+        <option value="">Select a course</option>
+        <option th:each="course : ${courses}"
+                th:text="${course.getName()}"
+                th:value="${course.getName()}"></option>
+
+    </select>
+    <input type="submit">Search</input>
+
+</form>
+</body>
+</html>

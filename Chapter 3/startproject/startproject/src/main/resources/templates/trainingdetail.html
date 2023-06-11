@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<h1 th:text="${training.getTitle()} + ' ' + ${training.getCode()}"></h1>
+
+<p th:text="${training.getTheme()}"></p>
+<p th:text="${training.getDuration()} + ' days'"></p>
+<p th:text="${training.getMax()}"></p>
+
+<a href="/gettrainings">Back to list</a>
+<a href="/">Home</a>
+
+</body>
+</html>

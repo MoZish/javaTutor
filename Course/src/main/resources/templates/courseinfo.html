@@ -6,11 +6,11 @@
 </head>
 <body>
 <h3>Course</h3>
-<p th:text = "'Name: ' + ${courseName}"></p>
-<p th:text = "'Location: ' + ${location}"></p>
-<span th:if = "${weekly == true}"><p th:text="'This is a weekly course, starting on '+ ${startDate}+ ' running for '+
-${nmOfDays}+ ' weeks.'"></p></span>
-<span th:unless = "${weekly == false}"><p th:text="'This course starts on '+ ${startDate}+ ' and runs for '+${nmOfDays}+' days.'"></p></span>
+<p th:text = "'Name: ' + ${course.getName()}"></p>
+<p th:text = "'Location: ' + ${course.getLocation()}"></p>
+<span th:if = "${course.isWeekly() == true}"><p th:text="'This is a weekly course, starting on '+ ${course.getStartDate()}+ ' running for '+
+${course.getNumberOfDays()}+ ' weeks.'"></p></span>
+<span th:if = "${course.isWeekly() == false}"><p th:text="'This course starts on '+ ${course.getStartDate()}+ ' and runs for '+${course.getNumberOfDays()}+' days.'"></p></span>
 <a href="/">Back</a>
 </body>
 </html>

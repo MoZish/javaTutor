@@ -29,11 +29,7 @@ public class MainController {
         course.setStartDate(startDate);
         course.setWeekly(weekly);
 
-        model.addAttribute("courseName",courseName);
-        model.addAttribute("location",location);
-        model.addAttribute("nmOfDays",nmOfDays);
-        model.addAttribute("startDate",startDate);
-        model.addAttribute("weekly",weekly);
+        model.addAttribute("course", course);
 
         return "courseinfo";
     }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>New training</h1>
+
+<form th:action="@{/edittraining(trainingId=${training.getId()})}" method="post">
+  <label for="code">code:</label>
+  <input type="text" id="code" name="code" th:value="${training.getCode()}">
+  <label for="title">title:</label>
+  <input type="text" name="title" id="title" th:value="${training.getTitle()}">
+  <label for="theme">theme:</label>
+  <input type="text" name="theme" id="theme" th:value="${training.getTheme()()}">
+  <label for="duration">duration:</label>
+  <input type="text" name="duration" id="duration" th:value="${training.getDuration()}">
+  <label for="max">maximum:</label>
+  <input type="text" name="max" id="max" th:value="${training.getMax()}">
+  <input type="submit">Save</input>
+</form>
+
+<a href="/">Back</a>
+
+</body>
+</html>
