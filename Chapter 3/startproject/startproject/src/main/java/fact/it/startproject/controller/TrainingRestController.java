@@ -68,7 +68,7 @@ public class TrainingRestController {
 
             repository.save(training);
 
-            return new ResponseEntity<>(training,HttpStatus.OK)
+            return new ResponseEntity<>(training,HttpStatus.OK);
         }
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);

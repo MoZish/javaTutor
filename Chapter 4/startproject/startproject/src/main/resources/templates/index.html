@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<a href="/getallpayments">Get all payments</a>
+<a href="/getallsortedbyamount">Get all payments sorted by amount</a>
+<a href="/getallcashpayments">Get all cash payments</a>
+<a href="/getallelectricpaymentssortedbycurrency">Get all electric payments sorted by currency</a>
+<form action="/paymentsgreaterthan">
+  <label for="amount">Amount:</label>
+  <input type="text" id="amount" name="amount">
+  <input type="submit" text="List of all payments with a certain amount">
+</form>
+
+</body>
+</html>
